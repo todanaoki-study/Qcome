@@ -520,24 +520,94 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 10px;
 }
 .communication__post:not(:last-child) {
   margin-bottom: 45px;
 }
 .communication__icon {
   display: block;
-  margin-right: 20px;
   border-radius: 50%;
 }
-.communication__text {
+.communication__content {
   width: 55%;
   background: #D9D9D9;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .communication__reservation {
   background: #0098A9;
+  margin-left: 0;
+  margin-top: 25px;
 }
+.communication__confirm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+.communication__confirmText {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.communication__confirmTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 15px solid #555555;
+  border-bottom: 0;
+}
+
+#myself {
+  justify-content: end;
+  flex-direction: row-reverse;
+}
+#myself .communication__content {
+  background: #0098A9;
+}
+
+.checker {
+  padding-top: 100px;
+}
+.checker__inner {
+  width: 70%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.checker__text {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.checker__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.checker__list:not(:last-child) {
+  margin-bottom: 10px;
+}
+.checker__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.checker__img {
+  display: block;
+  width: 45%;
+}
+.checker__btn {
+  margin-top: 60px;
+}
+
 .profile {
   padding-top: 100px;
 }
