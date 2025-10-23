@@ -734,4 +734,94 @@ body {
 .settlement__text {
   width: 100%;
 }
+
+.completion {
+  padding-top: 100px;
+  text-align: center;
+}
+.completion__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.completion__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+.completion__btn {
+  margin-top: 100px;
+}
+
+.myLend {
+  padding-top: 100px;
+}
+.myLend__title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.myLend__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loan {
+  padding: 50px 0;
+  overflow-x: hidden;
+}
+.loan__fvImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.loan__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loan__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.loan__item {
+  display: block;
+}
+.loan__itemName {
+  display: inline;
+}
+.loan__list {
+  margin-bottom: 20px;
+}
+.loan__features {
+  margin-bottom: 15px;
+}
+.loan__content:not(:last-child) {
+  margin-bottom: 20px;
+}
+.loan__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.loan__map {
+  margin-bottom: 20px;
+}
+
+.map {
+  display: block;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */

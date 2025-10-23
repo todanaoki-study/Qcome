@@ -785,6 +785,101 @@ body {
     &__text {
         width: 100%;
     }
+}
 
-    &__img {}
+.completion {
+    padding-top: 100px;
+    text-align: center;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 35px;
+    }
+
+    &__btn {
+        margin-top: 100px;
+    }
+
+}
+
+.myLend {
+    padding-top: 100px;
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    &__inner {
+        @include mix-inner();
+    }
+}
+
+//loan~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.loan {
+    padding: 50px 0;
+    overflow-x: hidden;
+
+    &__fvImg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__info {
+        @include mix-flex();
+        margin-bottom: 25px;
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__itemName {
+        display: inline;
+    }
+
+    &__list {
+        margin-bottom: 20px;
+    }
+
+    &__features {
+        margin-bottom: 15px;
+    }
+
+    &__content {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__map {
+        margin-bottom: 20px;
+    }
+}
+
+.map {
+    display: block;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
 }
