@@ -1,54 +1,36 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Post from "../component/post.js";
+import Btn from "../component/btn.js";
 
 function Home() {
     return (
-        <div class="brrow__inner">
-            <article class="brrow__post post">
-                <img class="post__img" src="https://placehold.jp/100x140.png" alt=""></img>
-                <div class="post__info">
-                    <div class="post__user">
-                        <img class="post__userIcon" src="https://placehold.jp/30x30.png" alt=""></img>
-                        <p class="post__userName">ユーザー名</p>
-                    </div>
-                    <h2 class="post__title">タイトルタイトルタイトルタイトル</h2>
-                    <p class="post__overview">東京都渋谷区</p>
+        <main className="home">
+            <div className="home__switching switching">
+                <div className="switching__container">
+                    <h1 className="switching__brrow tab">借りる</h1>
+                    <h1 className="switching__lend tab">貸す</h1>
                 </div>
-            </article>
-            <article class="brrow__post post">
-                <img class="post__img" src="https://placehold.jp/100x140.png" alt=""></img>
-                <div class="post__info">
-                    <div class="post__user">
-                        <img class="post__userIcon" src="https://placehold.jp/30x30.png" alt=""></img>
-                        <p class="post__userName">ユーザー名</p>
-                    </div>
-                    <h2 class="post__title">タイトルタイトルタイトルタイトル</h2>
-                    <p class="post__overview">東京都渋谷区</p>
+            </div>
+            <section className="brrow">
+                <div className="brrow__inner">
+                    {/* 以下仮配置 */}
+                    <Post></Post>
+                    <Post></Post>
+                    <Post></Post>
+                    <Post></Post>
                 </div>
-            </article>
-            <article class="brrow__post post">
-                <img class="post__img" src="https://placehold.jp/100x140.png" alt=""></img>
-                <div class="post__info">
-                    <div class="post__user">
-                        <img class="post__userIcon" src="https://placehold.jp/30x30.png" alt=""></img>
-                        <p class="post__userName">ユーザー名</p>
-                    </div>
-                    <h2 class="post__title">タイトルタイトルタイトルタイトル</h2>
-                    <p class="post__overview">東京都渋谷区</p>
+            </section>
+
+            <section className="lend">
+                <div className="lend__inner">
+                    <h2 className="lend__title">空いている部屋を有効活用して報酬をゲットしよう!!</h2>
+                    <p className="lend__question">部屋を貸すとは？</p>
+
+                    <Btn text="開始" to="write"></Btn>
                 </div>
-            </article>
-            <article class="brrow__post post">
-                <img class="post__img" src="https://placehold.jp/100x140.png" alt=""></img>
-                <div class="post__info">
-                    <div class="post__user">
-                        <img class="post__userIcon" src="https://placehold.jp/30x30.png" alt=""></img>
-                        <p class="post__userName">ユーザー名</p>
-                    </div>
-                    <h2 class="post__title">タイトルタイトルタイトルタイトル</h2>
-                    <p class="post__overview">東京都渋谷区</p>
-                </div>
-            </article>
-        </div>
+            </section>
+        </main >
     );
 }
 

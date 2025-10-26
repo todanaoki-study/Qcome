@@ -1,0 +1,937 @@
+@charset "utf-8";
+
+@charset "UTF-8";
+
+$primary-color: #0098A9;
+$link-color: #0000ee;
+
+@mixin mix-flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin mix-inner($w: 90%, $mw: 1200px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+$breakpoints: (
+    "tablet": "screen and (min-width: 640px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
+    ) !default;
+
+@mixin mix-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+body {
+    max-width: 650px;
+    font-size: 16px;
+    margin: 0;
+    // overflow-x: hidden;
+}
+
+
+//common~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#home,
+#chat,
+#profile,
+#setting {
+    //sliderの位置調整用
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: $primary-color;
+    z-index: 1000;
+
+    &__inner {
+        @include mix-inner(
+    );
+    @include mix-flex(center, space-between);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: $primary-color;
+
+    &__inner {
+        @include mix-inner();
+        @include mix-flex(center, space-between);
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    margin: 60px auto;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: #0098a9;
+
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.form {
+    &__label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        background: #D9D9D9;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 30px;
+
+        &::placeholder {
+            opacity: 0.6;
+        }
+    }
+
+    &__gender {
+        @include mix-flex(center, flex-start);
+
+        margin-bottom: 20px;
+    }
+
+    &__radio {
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        border: 2px solid #D9D9D9;
+        transition: .3s ease-in;
+
+        &:checked {
+            background: $primary-color;
+        }
+    }
+
+    &__textarea {
+        background: #d9d9d9;
+        padding: 10px;
+        margin-bottom: 30px;
+
+        &::placeholder {
+            opacity: 0.6;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+    }
+
+    &__price {
+        @include mix-flex(center, flex-start);
+    }
+
+    &__priceContainer {
+        margin-right: 20px;
+    }
+}
+
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    background: $primary-color;
+    min-height: 100vh;
+    width: 100%;
+    transition: .3s ease-in-out;
+
+    &__inner {
+        @include mix-inner();
+        padding: 120px 0;
+    }
+
+    &__label {
+        @include mix-flex(center, flex-start);
+        margin-bottom: 35px;
+    }
+
+    &__input {
+        background: #fff;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    &__list {
+        margin-bottom: 35px;
+        @include mix-flex(center, flex-start);
+        gap: 10px;
+    }
+
+    &__item {
+        width: 30%;
+        background: #fff;
+        border-radius: 5px;
+        text-align: center;
+        transition: .3s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.tools {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    @include mix-flex(center, center);
+    width: 100%;
+
+    &__content {
+        @include mix-flex();
+        width: 20%;
+    }
+
+    &__label {
+        width: 70%;
+        height: 30px;
+        background: #d9d9d9;
+        border-radius: 15px;
+    }
+
+    &__textArea {
+        padding-left: 10px;
+
+        &::placeholder {
+            opacity: .8;
+        }
+    }
+}
+
+//home~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.home {
+    padding-top: 60px;
+    overflow-x: hidden;
+}
+
+.switching {
+    &__container {
+        @include mix-flex();
+    }
+
+    &__brrow {
+        background: $primary-color;
+    }
+
+    &__lend {
+        background: #E0DFDF;
+    }
+}
+
+//切り替え用の共通スタイル
+.tab {
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.brrow {
+    &__inner {
+        @include mix-inner();
+    }
+
+    width: 100%;
+}
+
+.post {
+    @include mix-flex();
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__img {
+        width: 30%;
+        height: auto;
+    }
+
+    &__info {
+        width: 60%;
+    }
+
+    &__user {
+        @include mix-flex(center, flex-start);
+        margin-bottom: 10px;
+    }
+
+    &__userIcon {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    &__userName {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+}
+
+.lend {
+    width: 100%;
+    height: 100vh;
+
+    &__inner {
+        @include mix-inner();
+        position: relative;
+        top: 40%;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__question {
+        color: $link-color;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+}
+
+//lend~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.pan {
+    padding-top: 75px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__container {
+        @include mix-flex();
+
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            background: #D9D9D9;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            z-index: -1;
+        }
+
+        margin-bottom: 60px;
+    }
+
+    &__pointer {
+        font-size: 14px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+
+            background: #FA0A0A;
+            border-radius: 50%;
+        }
+    }
+}
+
+.myInfo {
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        margin-top: 45px;
+        margin-right: 0;
+    }
+}
+
+.lendInfo {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        margin-top: 45px;
+        margin-right: 0;
+
+        margin-bottom: 100px;
+    }
+}
+
+.confirm {
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &__container {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__content {
+        @include mix-flex(center, flex-start);
+        border-bottom: 1px solid #D9D9D9;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+    }
+
+    &__subTitle {
+        margin-right: 15px;
+    }
+
+    &__btn {
+        margin: 50px 0 100px auto;
+
+    }
+}
+
+.post {
+    &__inner {
+        @include mix-inner();
+        min-height: 100vh;
+        position: relative;
+        text-align: center;
+        top: 40%;
+        transform: translateY(50%);
+    }
+
+    &__container {
+        @include mix-flex();
+        margin-top: 30px;
+    }
+
+    &__save {
+        width: 100px;
+        background: #fff;
+        border: 1px solid #000;
+    }
+
+    &__push {
+        width: 100px;
+    }
+}
+
+.comp {
+    &__inner {
+        @include mix-inner();
+        min-height: 100vh;
+        position: relative;
+        text-align: center;
+        top: 40%;
+        transform: translateY(50%);
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+}
+
+//chat~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.chat {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 35px;
+    }
+
+    &__content {
+        @include mix-flex(center, flex-start);
+        border-bottom: 1px solid #D9D9D9;
+        padding-bottom: 20px;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__icon {
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    &__text {
+        opacity: .8;
+        width: 75%;
+    }
+}
+
+//communication
+.communication {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__post {
+        @include mix-flex(flex-start, flex-start);
+        gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 45px;
+        }
+    }
+
+    &__icon {
+        display: block;
+        border-radius: 50%;
+    }
+
+    &__content {
+        width: 55%;
+        background: #D9D9D9;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    &__reservation {
+        background: $primary-color;
+        margin-left: 0;
+        margin-top: 25px;
+    }
+
+    &__confirm {
+        @include mix-flex(center, flex-start);
+        margin-top: 30px;
+        opacity: .8;
+    }
+
+    &__confirmText {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    &__confirmTriangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-top: 15px solid #555555;
+        border-bottom: 0;
+    }
+}
+
+#myself {
+    justify-content: end;
+    flex-direction: row-reverse;
+
+    & .communication__content {
+        background: $primary-color;
+    }
+}
+
+//settlement
+.checker {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner(70%);
+    }
+
+    &__text {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    &__list {
+        @include mix-flex(center, flex-start);
+        width: 100%;
+        gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__container {
+        @include mix-flex();
+    }
+
+    &__img {
+        display: block;
+        width: 45%;
+    }
+
+    &__btn {
+        margin-top: 60px;
+    }
+
+}
+
+//profile~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.profile {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__info {
+        margin-bottom: 25px;
+    }
+
+    &__icon {
+        display: block;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+    }
+
+    &__nameContent {
+        @include mix-flex(center, center);
+        margin: 0 auto;
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__list {
+        @include mix-flex(center, center);
+        margin-bottom: 10px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__overview {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__attention {
+        display: block;
+        text-align: center;
+        color: $link-color;
+        margin-bottom: 45px;
+    }
+
+    &__edit {
+        @include mix-flex(center, center);
+        gap: 10px;
+    }
+
+    &__editBtn {
+        width: 45%;
+        background: #92D0D7;
+        border-radius: 5px;
+        transition: 0.3s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__btn {
+        display: block;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+    }
+}
+
+//setting~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.setting {
+    padding-top: 120px;
+
+    &__inner {
+        @include mix-inner()
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__item {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        border-bottom: 1px solid #D9D9D9;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__attention {
+        color: #FF0000;
+    }
+}
+
+//settlement~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.settlement {
+    padding-top: 100px;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 35px;
+    }
+
+    &__card {
+        @include mix-flex(center, flex-start);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        width: 100%;
+    }
+}
+
+.completion {
+    padding-top: 100px;
+    text-align: center;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 35px;
+    }
+
+    &__btn {
+        margin-top: 100px;
+    }
+
+}
+
+.myLend {
+    padding-top: 100px;
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    &__inner {
+        @include mix-inner();
+    }
+}
+
+//loan~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.loan {
+    padding: 50px 0;
+    overflow-x: hidden;
+
+    &__fvImg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__info {
+        @include mix-flex();
+        margin-bottom: 25px;
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__itemName {
+        display: inline;
+    }
+
+    &__list {
+        margin-bottom: 20px;
+    }
+
+    &__features {
+        margin-bottom: 15px;
+    }
+
+    &__content {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__map {
+        margin-bottom: 20px;
+    }
+}
+
+.map {
+    display: block;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+
+.attention {
+    padding: 60px 0;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+
+
+//js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.open {
+    transform: translateX(0%);
+}
+
+.closed {
+    transform: translateX(100%);
+}
+
+.attention-open {
+    display: block;
+    width: 100%;
+    height: 50vh;
+    background: rgba($color: #777, $alpha: .8);
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.attention-close {
+    display: none;
+}
