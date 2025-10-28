@@ -16,9 +16,6 @@ function Home() {
                 <div className="brrow__inner">
                     {/* 以下仮配置 */}
                     <Post></Post>
-                    <Post></Post>
-                    <Post></Post>
-                    <Post></Post>
                 </div>
             </section>
 

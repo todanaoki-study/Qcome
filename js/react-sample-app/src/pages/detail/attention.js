@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import Btn from "./btn";
+import Btn from "../../component/btn";
 
 function Attention({ isOpen, onClose }) {
 
@@ -9,7 +9,7 @@ function Attention({ isOpen, onClose }) {
 
     return (
         <div className={attentionClass}>
-            <div class="attention__inner">
+            <div className="attention__inner">
                 <h2 className="attention__title">わんくっしょん</h2>
                 <div className="attention__container">
                     <Btn text="一時保存して戻る" to="/"></Btn>
