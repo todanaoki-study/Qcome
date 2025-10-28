@@ -12,6 +12,7 @@ import Profile from "./pages/profile";
 import Slider from "./component/slider";
 import Write from "./pages/detail/write"
 import WriteChecker from './pages/detail/writeChecker';
+import Borrow from "./pages/detail/borrow";
 
 function App() {
   // headerの開く処理
@@ -33,6 +34,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/write" element={<Write />} />
         <Route path="/writeChecker" element={<WriteChecker />} />
+        <Route path="/borrow" element={<Borrow />} />
       </Routes>
       <Footer></Footer>
     </Router>

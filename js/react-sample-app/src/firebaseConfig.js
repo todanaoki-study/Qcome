@@ -1,6 +1,6 @@
 //必要な機能をインポート
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, addDoc } from 'https://www.gstatic.com/firebasejs/12.2.1//firebase-firestore.js';
+import { getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, addDoc } from 'https://www.gstatic.com/firebasejs/12.2.1//firebase-firestore.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyC5TilpFd8XsQw2Rn8HIvZwGy2M6LjLBFM",
@@ -17,4 +17,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //他のファイルでfirebaseの設定を使えるようにする
-export { db };
+export { db, collection, doc, getDoc, getDocs, setDoc, updateDoc, addDoc };
