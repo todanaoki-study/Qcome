@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@charset "UTF-8";
-
 $primary-color: #0098A9;
 $link-color: #0000ee;
 
@@ -91,6 +89,12 @@ body {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    &__home {
+        display: block;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -255,6 +259,20 @@ body {
     }
 }
 
+.logo {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
 //home~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .home {
@@ -263,16 +281,15 @@ body {
 }
 
 .switching {
-    &__container {
-        @include mix-flex();
-    }
+    @include mix-flex();
 
-    &__brrow {
-        background: $primary-color;
-    }
-
-    &__lend {
-        background: #E0DFDF;
+    &__btn {
+        display: block;
+        width: 50%;
+        text-align: center;
+        background: #D9D9D9;
+        padding: 10px;
+        border-radius: 15px 15px 0 0;
     }
 }
 
@@ -480,28 +497,12 @@ body {
 }
 
 .post {
-    &__inner {
-        @include mix-inner();
-        min-height: 100vh;
-        position: relative;
-        text-align: center;
-        top: 40%;
-        transform: translateY(50%);
-    }
+    @include mix-flex(center, flex-start);
+    margin-top: 30px;
 
     &__container {
-        @include mix-flex();
-        margin-top: 30px;
-    }
-
-    &__save {
-        width: 100px;
-        background: #fff;
-        border: 1px solid #000;
-    }
-
-    &__push {
-        width: 100px;
+        margin-left: 30px;
+        flex: 1;
     }
 }
 
@@ -934,4 +935,8 @@ body {
 
 .attention-close {
     display: none;
+}
+
+.activeTab {
+    background: $primary-color;
 }

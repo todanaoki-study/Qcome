@@ -14,17 +14,10 @@ import { db, collection, addDoc, doc } from "../../firebaseConfig";
 //firebaseにデータをセットする処理を宣言
 const addPost = async (data) => {
     try {
-        // 1. データを追加したいコレクションの参照を作成 (dbとコレクション名が必要)
-        const collectionRef = collection(db, "post"); // "posts" はコレクション名
-
-        // 2. addDoc を使ってデータを追加 (Firebaseが自動でIDを生成)
+        const collectionRef = collection(db, "post");
         const newDocRef = await addDoc(collectionRef, data);
-
-        // 成功時の処理
         console.log("新しいドキュメントが追加されました。ID: ", newDocRef.id);
-
     } catch (e) {
-        // 失敗時のエラー処理
         console.error("データ追加中にエラーが発生しました: ", e);
     }
 };

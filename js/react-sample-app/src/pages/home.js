@@ -1,32 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+
+//必要な機能をインポート
 import { Link } from 'react-router-dom';
-import Post from "../component/post.js";
-import Btn from "../component/btn.js";
+import Borrow from "./detail/borrow";
+import Lend from "./detail/lend";
+
 
 function Home() {
+
+    const [activeTab, setActiveTab] = useState('borrow');
+    // タブをクリックしたときの処理
+    const handleTabClick = (tabName) => {
+        setActiveTab(tabName);
+    };
+
     return (
         <main className="home">
+
+            {/* 切り替えようボタン */}
             <div className="home__switching switching">
-                <div className="switching__container">
-                    <h1 className="switching__brrow tab">借りる</h1>
-                    <h1 className="switching__lend tab">貸す</h1>
-                </div>
+                <button
+                    className={activeTab === 'borrow' ? 'switching__btn activeTab' : 'switching__btn'}
+                    onClick={() => handleTabClick('borrow')}
+                >借りる
+                </button>
+
+                <button
+                    className={activeTab === 'lend' ? 'switching__btn activeTab' : 'switching__btn'}
+                    onClick={() => handleTabClick('lend')}
+                >貸す
+                </button>
             </div>
-            <section className="brrow">
-                <div className="brrow__inner">
-                    {/* 以下仮配置 */}
-                    <Post></Post>
-                </div>
-            </section>
 
-            <section className="lend">
-                <div className="lend__inner">
-                    <h2 className="lend__title">空いている部屋を有効活用して報酬をゲットしよう!!</h2>
-                    <p className="lend__question">部屋を貸すとは？</p>
+            <div className="tab-content">
+                {activeTab === 'borrow' && <Borrow />}
+                {activeTab === 'lend' && <Lend />}
+            </div>
 
-                    <Btn text="開始" to="write"></Btn>
-                </div>
-            </section>
         </main >
     );
 }

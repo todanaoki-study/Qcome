@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./component/header";
 import Footer from "./component/footer";
 import Home from "./pages/home";
+import Lend from "./pages/detail/lend"
 import Chat from "./pages/chat";
 import Setting from "./pages/setting";
 import Profile from "./pages/profile";
@@ -12,7 +13,7 @@ import Profile from "./pages/profile";
 import Slider from "./component/slider";
 import Write from "./pages/detail/write"
 import WriteChecker from './pages/detail/writeChecker';
-import Borrow from "./pages/detail/borrow";
+import Info from "./pages/detail/info";
 
 function App() {
   // headerの開く処理
@@ -29,12 +30,13 @@ function App() {
       {/* ページ遷移するファイルを宣言 */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/lend" element={<Lend />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/write" element={<Write />} />
         <Route path="/writeChecker" element={<WriteChecker />} />
-        <Route path="/borrow" element={<Borrow />} />
+        <Route path="/info/:id" element={<Info />} />
       </Routes>
       <Footer></Footer>
     </Router>
