@@ -77,7 +77,7 @@ body {
 .profile,
 .setting,
 .comms {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 
@@ -128,7 +128,7 @@ body {
     justify-content: center;
     line-height: 1;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 18px;
     border-radius: 10px;
     width: 200px;
@@ -140,7 +140,7 @@ body {
 
 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }
 
@@ -186,6 +186,8 @@ body {
         background: #d9d9d9;
         padding: 10px;
         margin-bottom: 30px;
+        width: 100%;
+        border-radius: 5px;
 
         &::placeholder {
             opacity: 0.6;
@@ -285,22 +287,29 @@ body {
 
 .logo {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .icon {
     display: block;
+
     width: 30px;
     height: 30px;
+    border-radius: 50%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 50%;
+    margin-right: 5px;
 }
 
 //sIconはsearchボタンのアイコン用のやつ。object-fitの形式のみ変更。
 .sIcon {
     object-fit: contain;
+    width: 75px;
+    height: 30px;
+    display: block;
+    margin-right: -30px;
+    border-radius: 0;
 }
 
 #map {
@@ -323,8 +332,8 @@ body {
         width: 50%;
         text-align: center;
         background: #D9D9D9;
-        padding: 10px;
-        border-radius: 15px 15px 0 0;
+        padding: 8px;
+        border-radius: 25px 25px 0 0;
     }
 }
 
@@ -347,12 +356,16 @@ body {
         color: #555555;
         text-align: center;
     }
+
+    &__img {
+        margin-bottom: 10px;
+    }
 }
 
 .post {
     @include mix-flex();
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #d9d9d9;
 
     &__img {
@@ -368,12 +381,13 @@ body {
 
     &__user {
         @include mix-flex(center, flex-start);
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     &__userIcon {
         border-radius: 50%;
         margin-right: 10px;
+        margin-right: 5px;
     }
 
     &__userName {
@@ -388,7 +402,7 @@ body {
     }
 
     &__container {
-        margin-left: 30px;
+        margin-left: 20px;
         flex: 1;
     }
 }
@@ -601,6 +615,7 @@ body {
     &__icon {
         border-radius: 50%;
         margin-right: 20px;
+        margin-right: 5px;
     }
 
     &__text {
@@ -958,6 +973,38 @@ body {
     height: auto;
 }
 
+.features {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__user {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    &__user img {
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+
+    &__user dd {
+        font-size: 18px;
+    }
+}
+
 
 .attention {
     padding: 60px 0;
@@ -1002,4 +1049,6 @@ body {
 
 .activeTab {
     background: $primary-color;
+    color: #fff;
+    font-weight: bold;
 }
