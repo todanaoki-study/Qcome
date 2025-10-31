@@ -57,6 +57,14 @@ body {
     position: relative;
 }
 
+.home,
+.chat,
+.profile,
+.setting {
+    padding: 100px 0;
+}
+
+
 .header {
     position: fixed;
     display: block;
@@ -276,7 +284,6 @@ body {
 //home~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .home {
-    padding-top: 60px;
     overflow-x: hidden;
 }
 
@@ -301,22 +308,24 @@ body {
     border-radius: 15px 15px 0 0;
 }
 
-.brrow {
+.borrow {
+    margin-top: 30px;
+
     &__inner {
         @include mix-inner();
     }
 
-    width: 100%;
+    &__end {
+        color: #555555;
+        text-align: center;
+    }
 }
 
 .post {
     @include mix-flex();
-
-    &:not(:last-child) {
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-    }
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d9d9d9;
 
     &__img {
         width: 30%;
@@ -347,6 +356,11 @@ body {
         font-weight: bold;
         margin-bottom: 25px;
     }
+
+    &__container {
+        margin-left: 30px;
+        flex: 1;
+    }
 }
 
 .lend {
@@ -373,6 +387,24 @@ body {
 }
 
 //lend~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.write {
+    margin: 30px 0;
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &__subTitle {
+        margin-bottom: 20px;
+    }
+}
 
 .pan {
     padding-top: 75px;
@@ -493,16 +525,6 @@ body {
     &__btn {
         margin: 50px 0 100px auto;
 
-    }
-}
-
-.post {
-    @include mix-flex(center, flex-start);
-    margin-top: 30px;
-
-    &__container {
-        margin-left: 30px;
-        flex: 1;
     }
 }
 

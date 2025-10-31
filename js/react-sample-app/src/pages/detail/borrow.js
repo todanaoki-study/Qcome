@@ -47,15 +47,15 @@ function Borrow() {
     }
 
     return (
-        <section className="brrow">
-            <div className="brrow__inner">
+        <section className="borrow">
+            <div className="borrow__inner">
                 {posts.map(post => (
                     <Link key={post.id} to={`/info/${post.id}`}>
-                        <article className='post'>
-                            <Post post={post} ></Post>
-                        </article>
+                        <Post post={post} ></Post>
                     </Link>
                 ))}
+
+                <p className='borrow__end'>現在ある投稿は以上です</p>
             </div>
         </section>
     );

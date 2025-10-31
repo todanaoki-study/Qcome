@@ -14,6 +14,7 @@ import Slider from "./component/slider";
 import Write from "./pages/detail/write"
 import WriteChecker from './pages/detail/writeChecker';
 import Info from "./pages/detail/info";
+import Comms from "./pages/detail/comms";
 
 function App() {
   // headerの開く処理
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/lend" element={<Lend />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="comms" element={<Comms />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/write" element={<Write />} />

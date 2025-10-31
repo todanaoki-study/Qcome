@@ -10,7 +10,7 @@ function Slider({ isOpen, onClose }) {
             <div className="slider__inner">
                 <label className="slider__label">
                     <input className="slider__input" type="text" id="search" placeholder="キーワードで検索"></input>
-                    <img className="slider__img" src="https://placehold.jp/30x30.png" alt=""></img>
+                    <img className="slider__img icon" src="/img/icon/search.webp" alt=""></img>
                 </label>
 
                 <p className="slider__title">タグで絞り込み</p>
