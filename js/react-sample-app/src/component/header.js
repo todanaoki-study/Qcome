@@ -10,7 +10,7 @@ function Header({ onToggle }) {
                 </Link>
 
                 <button onClick={onToggle}>
-                    <img className="header__search icon" id="sliderBtn" src="img/icon/search.webp" alt=""></img>
+                    <img className="header__search icon sIcon" id="sliderBtn" src="img/icon/search.webp" alt=""></img>
                 </button>
             </div>
         </header>

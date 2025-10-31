@@ -1,3 +1,18 @@
+// READ ME
+//色々jsやhtml側で消したファイルのスタイルが残っているので、
+//不要なセレクタ（.main{font-size:16px}）など入っているので見つかり次第、報告orコメントアウトしといてください。
+//あと、大まかなページの分類ごとに~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~で
+//区切ってありますが、不要なもの、不適切な位置、にセレクタが入っている可能性があるので
+//見つけたら該当位置に戻すか、新たに~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//で区切っておいてください。
+
+//戸田のコードわかりにくいんで一応考え方書いておくと、
+//最初にmixinを設定 commonに全ページに共通するスタイルを設定
+//その後、大きなページから順にスタイルを当てている。
+//一番下にはjsで使う用のクラスを指定している。
+
+
+//mixinの宣言~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @charset "utf-8";
 
 $primary-color: #0098A9;
@@ -60,7 +75,8 @@ body {
 .home,
 .chat,
 .profile,
-.setting {
+.setting,
+.comms {
     padding: 100px 0;
 }
 
@@ -278,7 +294,19 @@ body {
     width: 30px;
     height: 30px;
     aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+//sIconはsearchボタンのアイコン用のやつ。object-fitの形式のみ変更。
+.sIcon {
     object-fit: contain;
+}
+
+#map {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: 5px solid #fff;
 }
 
 //home~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,7 +337,7 @@ body {
 }
 
 .borrow {
-    margin-top: 30px;
+    padding-top: 30px;
 
     &__inner {
         @include mix-inner();
@@ -330,6 +358,8 @@ body {
     &__img {
         width: 30%;
         height: auto;
+        aspect-ratio: 3/4;
+        object-fit: cover;
     }
 
     &__info {
@@ -636,6 +666,18 @@ body {
     }
 }
 
+.comms {
+    &__inner {
+        @include mix-inner();
+    }
+
+    &__attention {
+        text-align: center;
+        color: #555555;
+        font-weight: bold;
+    }
+}
+
 #myself {
     justify-content: end;
     flex-direction: row-reverse;
@@ -931,7 +973,6 @@ body {
         text-align: center;
     }
 }
-
 
 
 //js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

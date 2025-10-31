@@ -34,20 +34,25 @@ function Info() {
             <img className="borrow__img" src='https://placehold.jp/400x390.png'></img>
             <div className="borrow__inner">
 
-                <div className="borrow__features">
-                    <h2 className="borrow__title">{postDetail.title}</h2>
-                    <p className='borrow__title'>{postDetail.address}</p>
-                    <dl className='borrow__user user'>
+                <div className="borrow__features features">
+                    <div class="features__container">
+                        <h2 className="features__title">{postDetail.title}</h2>
+                        <p className='features__price'>{postDetail.price}円</p>
+                    </div>
+
+                    <dl className='features__user user'>
                         <dt><img className='post__icon' src="https://placehold.jp/30x30.png"></img></dt>
                         <dd>○さん</dd>
                     </dl>
-                    <dl className='borrow__feature'>
-                        <dt className='borrow__subtitle'>
-                            この物件の特徴
+
+                    <dl className='features__container'>
+                        <dt
+                            className='features__subtitle'>この物件の住所
                         </dt>
-                        <dd className='borrow__overview'>
-                            テストテストテストテストテストテストテストサンプル。
+                        <dd
+                            className='features__address'>{postDetail.address}
                         </dd>
+
                     </dl>
                 </div>
 
