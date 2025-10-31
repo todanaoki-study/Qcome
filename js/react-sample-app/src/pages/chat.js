@@ -10,45 +10,45 @@ function Chat() {
                 <dl className="chat__content">
                     <dt className="chat__icon"><img className="chat__icon" src="https://placehold.jp/30x30.png" alt=""></img></dt>
                     <dd className="chat__text">
-                        <a href="./communication/communication.html">
+                        <Link to="/comms">
                             こんにちワン！ご応募ありがとうございます！テストテストテストテスト
-                        </a>
+                        </Link>
                     </dd>
                 </dl>
 
                 <dl className="chat__content">
                     <dt className="chat__icon"><img className="chat__icon" src="https://placehold.jp/30x30.png" alt=""></img></dt>
                     <dd className="chat__text">
-                        <a href="./communication/communication.html">
+                        <Link to="/comms">
                             こんにちワン！ご応募ありがとうございます！テストテストテストテスト
-                        </a>
+                        </Link>
                     </dd>
                 </dl>
 
                 <dl className="chat__content">
                     <dt className="chat__icon"><img className="chat__icon" src="https://placehold.jp/30x30.png" alt=""></img></dt>
                     <dd className="chat__text">
-                        <a href="./communication/communication.html">
+                        <Link to="/comms">
                             こんにちワン！ご応募ありがとうございます！テストテストテストテスト
-                        </a>
+                        </Link>
                     </dd>
                 </dl>
 
                 <dl className="chat__content">
                     <dt className="chat__icon"><img className="chat__icon" src="https://placehold.jp/30x30.png" alt=""></img></dt>
                     <dd className="chat__text">
-                        <a href="./communication/communication.html">
+                        <Link to="/comms">
                             こんにちワン！ご応募ありがとうございます！テストテストテストテスト
-                        </a>
+                        </Link>
                     </dd>
                 </dl>
 
                 <dl className="chat__content">
                     <dt className="chat__icon"><img className="chat__icon" src="https://placehold.jp/30x30.png" alt=""></img></dt>
                     <dd className="chat__text">
-                        <a href="./communication/communication.html">
+                        <Link to="/comms">
                             こんにちワン！ご応募ありがとうございます！テストテストテストテスト
-                        </a>
+                        </Link>
                     </dd>
                 </dl>
 
