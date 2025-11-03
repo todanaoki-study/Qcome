@@ -22,7 +22,7 @@ body {
 .profile,
 .setting,
 .comms {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .header {
@@ -80,7 +80,7 @@ body {
   justify-content: center;
   line-height: 1;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-size: 18px;
   border-radius: 10px;
   width: 200px;
@@ -91,7 +91,7 @@ body {
   background-color: #0098a9;
 }
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .form__label {
@@ -134,6 +134,8 @@ body {
   background: #d9d9d9;
   padding: 10px;
   margin-bottom: 30px;
+  width: 100%;
+  border-radius: 5px;
 }
 .form__textarea::-moz-placeholder {
   opacity: 0.6;
@@ -241,23 +243,29 @@ body {
 
 .logo {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .icon {
   display: block;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .sIcon {
   -o-object-fit: contain;
      object-fit: contain;
+  width: 75px;
+  height: 30px;
+  display: block;
+  margin-right: -30px;
+  border-radius: 0;
 }
 
 #map {
@@ -282,8 +290,8 @@ body {
   width: 50%;
   text-align: center;
   background: #D9D9D9;
-  padding: 10px;
-  border-radius: 15px 15px 0 0;
+  padding: 8px;
+  border-radius: 25px 25px 0 0;
 }
 
 .tab {
@@ -306,14 +314,17 @@ body {
   color: #555555;
   text-align: center;
 }
+.borrow__img {
+  margin-bottom: 10px;
+}
 
 .post {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #d9d9d9;
 }
 .post__img {
@@ -331,11 +342,12 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .post__userIcon {
   border-radius: 50%;
   margin-right: 10px;
+  margin-right: 5px;
 }
 .post__userName {
   font-size: 14px;
@@ -347,7 +359,7 @@ body {
   margin-bottom: 25px;
 }
 .post__container {
-  margin-left: 30px;
+  margin-left: 20px;
   flex: 1;
 }
 
@@ -548,6 +560,7 @@ body {
 .chat__icon {
   border-radius: 50%;
   margin-right: 20px;
+  margin-right: 5px;
 }
 .chat__text {
   opacity: 0.8;
@@ -885,6 +898,31 @@ body {
   height: auto;
 }
 
+.features__container {
+  display: flex;
+  justify-content: space-between;
+}
+.features__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.features__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.features__user {
+  display: flex;
+  margin-bottom: 10px;
+}
+.features__user img {
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.features__user dd {
+  font-size: 18px;
+}
+
 .attention {
   padding: 60px 0;
 }
@@ -926,5 +964,7 @@ body {
 
 .activeTab {
   background: #0098A9;
+  color: #fff;
+  font-weight: bold;
 }
 /*# sourceMappingURL=App.css.map */
