@@ -16,6 +16,8 @@ import WriteChecker from './pages/detail/writeChecker';
 import Info from "./pages/detail/info";
 import Comms from "./pages/detail/comms";
 
+import Settle from "./pages/detail/settlement";
+
 function App() {
   // headerの開く処理
   const [isSliderOpen, setIsSliderOpen] = useState(false);
@@ -39,6 +41,7 @@ function App() {
         <Route path="/write" element={<Write />} />
         <Route path="/writeChecker" element={<WriteChecker />} />
         <Route path="/info/:id" element={<Info />} />
+        <Route path='/settle' element={<Settle />} />
       </Routes>
       <Footer></Footer>
     </Router>

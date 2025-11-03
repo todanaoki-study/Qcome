@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { db, doc, getDoc } from '../../firebaseConfig';
+import Btn from '../../component/btn';
 
 function Info() {
 
@@ -93,6 +94,8 @@ function Info() {
                 </dl>
 
             </div >
+
+            <Btn to="/comms" text="貸出人とコンタクト"></Btn>
         </section >
     );
 }
