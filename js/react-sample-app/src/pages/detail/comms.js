@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 import Btn from "../../component/btn";
 
 function Comms() {
+
+    const { id } = useParams();
+
     return (
         <div className="comms">
             <div className="comms__inner">
@@ -16,7 +19,7 @@ function Comms() {
 
                 <article>
                     <p>以下のボタンから決済と予約を確定してください。</p>
-                    <Btn text="決済" to="/settle"></Btn>
+                    <Btn text="決済" to={`/settle/${id}`}></Btn>
                 </article>
             </div>
         </div>

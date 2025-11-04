@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 import Btn from "../../component/btn";
 
+
 function Settle() {
+    const { id } = useParams();
+    console.log(id);
     return (
         <div className="settle">
             <div className="settle__inner">
@@ -11,7 +14,7 @@ function Settle() {
                 </p>
 
                 <div className="settle__container">
-                    <img src="https://placehold.jp/300x400.png"></img>
+                    <img src="/img/house/living-room-2732939_1280.jpg"></img>
 
                     <dl className="settle__list">
                         <dt className="settle__item">あ行</dt>
@@ -34,7 +37,8 @@ function Settle() {
                     </dl>
                 </div>
 
-                <Btn to="settleWrite" link="/settleWrite"></Btn>
+                {/* パスが../じゃないと「./settle/settleWrite」になってしまうので強引ですが,,, */}
+                <Btn text="決済へ" to={`../settleWrite/${id}`}></Btn>
             </div>
         </div>
     );

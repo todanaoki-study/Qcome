@@ -5,7 +5,7 @@ import Post from "../../component/post.js";
 import Btn from "../../component/btn.js";
 
 //firebaseの機能をインポート
-import { db, collection, getDocs } from "../../firebaseConfig.js";
+import { db, collection, getDocs, query, where } from "../../firebaseConfig.js";
 
 function Borrow() {
     const [posts, setPosts] = useState([]);
@@ -15,7 +15,10 @@ function Borrow() {
     const fetchPosts = async () => {
         try {
             const colRef = collection(db, "post"); // コレクション名を "posts" に仮定
-            const snapshot = await getDocs(colRef);
+
+            const q = query(colRef, where("state", "==", "public"));
+
+            const snapshot = await getDocs(q);
 
             const postsData = [];
             snapshot.forEach(doc => {
@@ -54,7 +57,6 @@ function Borrow() {
                         <Post post={post} ></Post>
                     </Link>
                 ))}
-
                 <p className='borrow__end'>現在ある投稿は以上です</p>
             </div>
         </section>

@@ -12,6 +12,7 @@ import { db, collection, addDoc } from "../../firebaseConfig.js"
 function EntryPage() {
     // 1. フォームデータ全体を一つのオブジェクトで管理
     const [formData, setFormData] = useState({
+        name: '',
         title: '',//物件名
         address: '',//住所
         purpose: '',//用途

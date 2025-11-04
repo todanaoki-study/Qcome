@@ -4,13 +4,14 @@ import { db, doc, getDoc } from '../../firebaseConfig';
 import Btn from '../../component/btn';
 
 function Info() {
-
     // ★ 1. URLからポストのIDを取得
     const { id } = useParams();
+
     const [postDetail, setPostDetail] = useState(null);
     useEffect(() => {
         //パラメータがある場合
         if (id) {
+            console.log(id);
             const fetchPostDetail = async () => {
                 const docRef = doc(db, "post", id); // IDを使ってドキュメント参照を作成
                 const docSnap = await getDoc(docRef);
@@ -32,7 +33,7 @@ function Info() {
 
     return (
         <section className="borrow">
-            <img className="borrow__img" src='https://placehold.jp/400x390.png'></img>
+            <img className="borrow__img" src='/img/house/living-room-2732939_1280.jpg'></img>
             <div className="borrow__inner">
 
                 <div className="borrow__features features">
@@ -43,7 +44,7 @@ function Info() {
 
                     <dl className='features__user user'>
                         <dt><img className='post__icon' src="https://placehold.jp/30x30.png"></img></dt>
-                        <dd>○さん</dd>
+                        <dd>{postDetail.name}</dd>
                     </dl>
 
                     <dl className='features__container'>
@@ -62,7 +63,16 @@ function Info() {
                         用途
                     </dt>
                     <dd className='info__overview'>
-                        {postDetail.propose}
+                        {postDetail.purpose}
+                    </dd>
+                </dl>
+
+                <dl className='borrow__info info'>
+                    <dt className='info__title'>
+                        上限人数
+                    </dt>
+                    <dd className='info__overview'>
+                        {postDetail.limit}人
                     </dd>
                 </dl>
 
@@ -77,25 +87,15 @@ function Info() {
 
                 <dl className='borrow__info info'>
                     <dt className='info__title'>
-                        この物件の特徴
+                        注意点
                     </dt>
                     <dd className='info__overview'>
-                        テストテストテストテストテストテストテストサンプル。
+                        {postDetail.note}
                     </dd>
                 </dl>
-
-                <dl className='borrow__info info'>
-                    <dt className='info__title'>
-                        この物件の特徴
-                    </dt>
-                    <dd className='info__overview'>
-                        テストテストテストテストテストテストテストサンプル。
-                    </dd>
-                </dl>
-
             </div >
 
-            <Btn to="/comms" text="貸出人とコンタクト"></Btn>
+            <Btn to={`/comms/${id}`} text="貸出人とコンタクト"></Btn>
         </section >
     );
 }
