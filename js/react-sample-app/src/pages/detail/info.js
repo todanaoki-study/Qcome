@@ -37,25 +37,19 @@ function Info() {
             <div className="borrow__inner">
 
                 <div className="borrow__features features">
-                    <div class="features__container">
+                    <dl className='features__user user'>
+                        <dt><img className='post__icon icon' src="/img/people/igarasi.webp"></img></dt>
+                        <dd>{postDetail.name}</dd>
+                    </dl>
+
+                    <div className="features__container">
                         <h2 className="features__title">{postDetail.title}</h2>
                         <p className='features__price'>{postDetail.price}円</p>
                     </div>
 
-                    <dl className='features__user user'>
-                        <dt><img className='post__icon' src="https://placehold.jp/30x30.png"></img></dt>
-                        <dd>{postDetail.name}</dd>
-                    </dl>
+                    <Link className='features__address' target="_blank" to={`https://www.google.co.jp/maps/place/${postDetail.address}`}>{postDetail.address}</Link>
 
-                    <dl className='features__container'>
-                        <dt
-                            className='features__subtitle'>この物件の住所
-                        </dt>
-                        <dd
-                            className='features__address'>{postDetail.address}
-                        </dd>
 
-                    </dl>
                 </div>
 
                 <dl className='borrow__info info'>
