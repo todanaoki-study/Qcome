@@ -17,6 +17,7 @@ import Info from "./pages/detail/info";
 import Comms from "./pages/detail/comms";
 
 import Settle from "./pages/detail/settlement";
+import SettleWrite from "./pages/detail/settleWrite";
 
 function App() {
   // headerの開く処理
@@ -35,13 +36,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/lend" element={<Lend />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="comms" element={<Comms />} />
+        <Route path="/comms/:id" element={<Comms />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/write" element={<Write />} />
         <Route path="/writeChecker" element={<WriteChecker />} />
         <Route path="/info/:id" element={<Info />} />
-        <Route path='/settle' element={<Settle />} />
+        <Route path='/settle/:id' element={<Settle />} />
+        <Route path='/settleWrite/:id' element={<SettleWrite />} />
       </Routes>
       <Footer></Footer>
     </Router>

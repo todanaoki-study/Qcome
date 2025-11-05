@@ -10,6 +10,14 @@ function FormStep1({ formData, onInputChange, onNext }) {
             <h2 className='write__subTitle'>ステップ 1: 情報を入力してください</h2>
 
             <Form
+                label="お名前"
+                name="name"
+                placeholder="田中太郎"
+                value={formData.name}
+                onChange={onInputChange}
+            />
+
+            <Form
                 label="物件名"
                 name="title"              // ★ name属性: formDataのキーと一致させる
                 placeholder="物件名"

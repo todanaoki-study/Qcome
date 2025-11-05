@@ -7,11 +7,11 @@ function Profile() {
             <div className="profile__inner">
                 <dl className="profile__info">
                     <dt className="profile__infoItem">
-                        <img className="profile__icon" src="https://placehold.jp/100x100.png" alt=""></img>
+                        <img className="profile__icon" src="/img/people/igarasi.webp" alt=""></img>
                     </dt>
                     <dd className="profile__nameContent">
                         <p className="profile__name">IGARAしげってもいい？</p>
-                        <img className="profile__marker" src="https://placehold.jp/30x30.png" alt=""></img>
+                        <img className="profile__marker" src="/img/medal/blond02.webp" alt=""></img>
                     </dd>
                 </dl>
 

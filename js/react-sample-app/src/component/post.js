@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 //todo3種類を一旦ランダムで配置
-// const src = [
-//     "/img/people/igarasi.webp",
-//     "./img/people/"
-// ]
 
 function Post({ post }) {
     return (
@@ -14,7 +10,7 @@ function Post({ post }) {
             <div className="post__container">
                 <dl className="post__user user">
                     <dt><img className='post__icon icon' src="/img/people/igarasi.webp"></img></dt>
-                    <dd>○さん</dd>
+                    <dd>{post.name}</dd>
                 </dl>
                 <h2>{post.title}</h2>
                 <p>{post.address}</p>

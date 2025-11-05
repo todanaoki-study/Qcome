@@ -12,6 +12,7 @@ import { db, collection, addDoc } from "../../firebaseConfig.js"
 function EntryPage() {
     // 1. フォームデータ全体を一つのオブジェクトで管理
     const [formData, setFormData] = useState({
+        name: '',//ユーザー名
         title: '',//物件名
         address: '',//住所
         purpose: '',//用途
@@ -80,7 +81,7 @@ function EntryPage() {
 
     return (
         <section className='write'>
-            <div class="write__inner">
+            <div className="write__inner">
                 <h1 className='write__title'>貸出情報を入力・確認</h1>
                 {renderStep()}
             </div>
